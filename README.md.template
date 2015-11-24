@@ -1,0 +1,13 @@
+AgamaJS is the architectural tessellation library for building tile patterns.
+
+## Features ##
+
+* **In-the-Browser, For-The-Browser:** Only 3 lines of code to create any patterns in the browser.
+* **Based on RaphaelJS:** Extends the capabilities of RaphaelJS library to build tiling patterns.
+* **Extensive browser support:** Guaranteed to work on IE6, IE7, IE8, IE9, IE10, Chrome and Firefox
+* **No dependencies:** Tiny standalone .js file.
+
+## Downloads ##
+
+* [Version @@_pkg_version_, minimized, 4.4K : http://agamajs.com/@@_minimized_file_](http://agamajs.com/@@_minimized_file_)
+* [Version @@_pkg_version_, un-minimized, 13K : http://agamajs.com/@@_un_minimized_file_](http://agamajs.com/@@_un_minimized_file_)

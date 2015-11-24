@@ -19,7 +19,7 @@
     </script>
 
     <!-- load test suite -->
-    <script src="browserified_tests.js"></script>
+    <script src="/@@browserified_tests_js_file"></script>
 
     <!-- kick of tests -->
     <script>
