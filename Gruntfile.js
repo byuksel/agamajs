@@ -35,7 +35,7 @@ module.exports = function(grunt) {
       minimized_output_file: '<%= pkg.name %>.<%= pkg.version %>.standalone.min.js',
       banner_for_production: '/*! <%= pkg.name %>.<%= pkg.version %>.<%= grunt.template.today("h:MM:ss yyyy-mm-dd") %> */\n'
     },
-        browserify: {
+    browserify: {
       standalone: {
         src: path.join('<%= projectparams.src_dir %>', '<%= pkg.name %>.js'),
         dest: path.join('<%= projectparams.dist_dir %>', '<%= projectparams.output_file %>'),
@@ -71,12 +71,7 @@ module.exports = function(grunt) {
     },
     // Start the basic web server from connect.
     connect: {
-      server: {},
-      keepalive: {
-        options: {
-          keepalive: true
-        }
-      }
+      server: {}
     },
     jsdoc: {
       all: {

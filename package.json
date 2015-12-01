@@ -1,6 +1,6 @@
 {
   "name": "agama",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "AgamaJS: the vector javascript library for creating architectural tessellations",
   "keywords": [
     "tessellation",
@@ -47,6 +47,10 @@
     "sinon-chai": "^2.8.0",
     "time-grunt": "*",
     "uglify-js": "^2.5.0"
+  },
+  "scripts" :
+  {
+    "test" : "grunt test"
   },
   "license": "Apache-2.0"
 }
