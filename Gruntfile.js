@@ -86,6 +86,17 @@ module.exports = function(grunt) {
         }
       }
     },
+    jscs: {
+      src : [
+        path.join('<%= projectparams.src_dir %>', '/**/*.js'),
+        path.join('<%= projectparams.unittests_dir %>', '/**/*.js')
+      ],
+      options: {
+        config: ".jscsrc",
+        verbose: true, // If you need output with rule names http://jscs.info/overview.html#verbose
+        fix: true // Autofix code style violations when possible.
+      }
+    },
     // jshint all the src files.
     jshint: {
       options: {
@@ -205,6 +216,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks("grunt-jscs");
   grunt.loadNpmTasks('grunt-jsdoc');
   grunt.loadNpmTasks('grunt-markdown');
   grunt.loadNpmTasks('grunt-mocha-phantomjs');

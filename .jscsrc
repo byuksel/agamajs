@@ -1,0 +1,4 @@
+{
+	"preset": "google"
+        "excludeFiles": ["test/output/**", "node_modules/**"],
+}

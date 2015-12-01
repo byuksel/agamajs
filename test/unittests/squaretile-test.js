@@ -19,7 +19,7 @@ chai.config.truncateThreshold = 0;
 
 describe('SquareTile.js Unit Test', function() {
 
-  it('SquareTile should have correct values', function(){
+  it('SquareTile should have correct values', function() {
     var testClass = new SquareTile(0, 0, 10, 20);
     expect(testClass.topX).eql(0);
     expect(testClass.topY).eql(0);
@@ -29,12 +29,12 @@ describe('SquareTile.js Unit Test', function() {
     expect(testClass.y_center).eql(10);
   });
 
-  it('SquareTile should throw errors if top values are bigger than bottom values', function(){
+  it('SquareTile should throw errors if top values are bigger than bottom values', function() {
     expect(function() {new SquareTile(0, 10, 0, 0);}).to.throw('topY:10 is bigger than bottomY:0');
     expect(function() {new SquareTile(10, 0, 0, 0);}).to.throw('topX:10 is bigger than bottomX:0');
   });
 
-  it('SquareTile.isInside() should work', function(){
+  it('SquareTile.isInside() should work', function() {
     var testClass = new SquareTile(0, 0, 10, 20);
     expect(testClass.isInside(0,0)).eql(true);
     expect(testClass.isInside(5,0)).eql(true);
@@ -48,17 +48,16 @@ describe('SquareTile.js Unit Test', function() {
     expect(testClass.isInside(10.0001, 20)).eql(false);
   });
 
-  it('SquareTile.isInside() should work', function(){
+  it('SquareTile.isInside() should work', function() {
     var testClass = new SquareTile(0, 0, 10, 20);
     var a = [];
     testClass.pushIfInsideTile(0, 0, a);
     testClass.pushIfInsideTile(5, 5, a);
     testClass.pushIfInsideTile(15, 15, a);
     testClass.pushIfInsideTile(10.01, 0, a);
-    expect(a).to.deep.contain.members([{x: 0, y:0}, {x: 5, y:5}]);
-    expect(a).not.to.contain({x: 15, y:15});
-    expect(a).not.to.contain({x: 10.01, y:0});
+    expect(a).to.deep.contain.members([{x: 0, y: 0}, {x: 5, y: 5}]);
+    expect(a).not.to.contain({x: 15, y: 15});
+    expect(a).not.to.contain({x: 10.01, y: 0});
   });
-
 
 });
