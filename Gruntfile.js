@@ -223,10 +223,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-mocha-test');
   grunt.loadNpmTasks('grunt-replace');
   // Aliases
-  grunt.registerTask('browsertest', ['clean:tests', 'jshint', 'browserify', 'replace:browserified_tests_file', 'connect:server', 'mocha_phantomjs']);
+  grunt.registerTask('browsertest', ['clean:tests', 'jshint', 'jscs', 'browserify', 'replace:browserified_tests_file', 'connect:server', 'mocha_phantomjs']);
   grunt.registerTask('dist', ['clean:dist', 'browserify', 'uglify']);
   grunt.registerTask('docs', ['clean:docs', 'replace:dist', 'markdown', 'jsdoc']);
-  grunt.registerTask('localtest', ['clean:tests', 'jshint', 'mochaTest']);
+  grunt.registerTask('localtest', ['clean:tests', 'jshint', 'jscs', 'mochaTest']);
   grunt.registerTask('test', ['localtest', 'browsertest']);
   // Default task
   grunt.registerTask('default', ['localtest', 'dist']);

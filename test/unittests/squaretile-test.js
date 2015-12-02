@@ -10,8 +10,9 @@ var SquareTile = require('../../lib/squaretile');
 
 var chai = require('chai'),
     sinon = require('sinon'),
-    sinonChai = require('sinon-chai'),
-    expect = chai.expect;
+    sinonChai = require('sinon-chai');
+
+var expect = chai.expect;
 
 chai.use(sinonChai);
 chai.config.includeStack = true;
@@ -25,14 +26,17 @@ describe('SquareTile.js Unit Test', function() {
     expect(testClass.topY).eql(0);
     expect(testClass.bottomX).eql(10);
     expect(testClass.bottomY).eql(20);
-    expect(testClass.x_center).eql(5);
-    expect(testClass.y_center).eql(10);
+    expect(testClass.xCenter).eql(5);
+    expect(testClass.yCenter).eql(10);
   });
 
-  it('SquareTile should throw errors if top values are bigger than bottom values', function() {
-    expect(function() {new SquareTile(0, 10, 0, 0);}).to.throw('topY:10 is bigger than bottomY:0');
-    expect(function() {new SquareTile(10, 0, 0, 0);}).to.throw('topX:10 is bigger than bottomX:0');
-  });
+  it('SquareTile should throw err if top values are bigger than bottom values',
+    function() {
+       expect(function() {new SquareTile(0, 10, 0, 0);}).to.throw(
+         'topY:10 is bigger than bottomY:0');
+       expect(function() {new SquareTile(10, 0, 0, 0);}).to.throw(
+         'topX:10 is bigger than bottomX:0');
+     });
 
   it('SquareTile.isInside() should work', function() {
     var testClass = new SquareTile(0, 0, 10, 20);

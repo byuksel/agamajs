@@ -10,8 +10,9 @@ var Utils = require('../../lib/utils');
 
 var chai = require('chai'),
     sinon = require('sinon'),
-    sinonChai = require('sinon-chai'),
-    expect = chai.expect;
+    sinonChai = require('sinon-chai');
+
+var expect = chai.expect;
 
 chai.use(sinonChai);
 chai.config.includeStack = true;
@@ -40,7 +41,8 @@ describe('Utils.js Unit Test', function() {
   });
 
   it('(sortByXY) should work with close floating numbers', function() {
-    expect(Utils.sortByXY(0 + Utils.EPSILON / 2, 0, 0, 0 - Utils.EPSILON / 2)).equal(0);
+    expect(Utils.sortByXY(
+      0 + Utils.EPSILON / 2, 0, 0, 0 - Utils.EPSILON / 2)).equal(0);
     expect(Utils.sortByXY(0 + Utils.EPSILON, 0, 0, 0)).equal(1);
     expect(Utils.sortByXY(0, Utils.EPSILON, 0, 0)).equal(1);
     expect(Utils.sortByXY(0, 0, Utils.EPSILON, 0)).equal(-1);
