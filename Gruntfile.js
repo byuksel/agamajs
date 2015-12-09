@@ -41,11 +41,11 @@ module.exports = function(grunt) {
         src: path.join('<%= projectparams.src_dir %>', '<%= pkg.name %>.js'),
         dest: path.join('<%= projectparams.dist_dir %>', '<%= projectparams.output_file %>'),
         options: {
-          alias: {
-            '<%= pkg.name %>': path.join('<%= projectparams.src_dir %>', '<%= pkg.name %>.js'),
-            'raphael': path.join('<%= projectparams.deps_dir %>', 'raphael/raphael.amd.js'),
-            'eve': path.join('<%= projectparams.deps_dir %>', 'raphael/dev/eve.js')
-          },
+          require: [
+            [path.join('<%= projectparams.src_dir %>', '<%= pkg.name %>.js'), {expose: '<%= pkg.name %>'} ],
+            [path.join('<%= projectparams.deps_dir %>', 'raphael/raphael.amd.js'), {expose: 'raphael'} ],
+            [path.join('<%= projectparams.deps_dir %>', 'raphael/dev/eve.js'), {expose: 'eve'} ]
+          ],
           banner: '<%= projectparams.banner_for_production %>'
         }
       },
