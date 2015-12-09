@@ -16,6 +16,7 @@ module.exports = function(grunt) {
       readme_md_html_file: './README.md.html',
       // Directories that already exist
       src_dir: './lib/',
+      deps_dir: './deps/',
       test_dir: './test/',
       unittests_dir: './test/unittests/',
       docs_dir: './docs/',
@@ -41,7 +42,9 @@ module.exports = function(grunt) {
         dest: path.join('<%= projectparams.dist_dir %>', '<%= projectparams.output_file %>'),
         options: {
           alias: {
-            '<%= pkg.name %>': path.join('<%= projectparams.src_dir %>', '<%= pkg.name %>.js')
+            '<%= pkg.name %>': path.join('<%= projectparams.src_dir %>', '<%= pkg.name %>.js'),
+            'raphael': path.join('<%= projectparams.deps_dir %>', 'raphael/raphael.amd.js'),
+            'eve': path.join('<%= projectparams.deps_dir %>', 'raphael/dev/eve.js')
           },
           banner: '<%= projectparams.banner_for_production %>'
         }
