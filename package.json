@@ -1,6 +1,6 @@
 {
   "name": "agama",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "AgamaJS: the vector javascript library for creating architectural tessellations",
   "keywords": [
     "tessellation",
